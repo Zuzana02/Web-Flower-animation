@@ -21,14 +21,35 @@
 
         /* TEXT VZADU (Vrstva 1) */
         .brand-container {
-            position: absolute; /* Vytrhne text z bežného rozloženia */
-            z-index: 1; /* Umiestni ho dozadu */
+            position: absolute;
+            z-index: 1;
             text-align: center;
-            color: #354024;
+            
+            /* Bledšia zelená z tvojej palety (MOSS GREEN) pre lepší kontrast */
+            color: #889063; 
+            
+            /* Text je na začiatku skrytý a spúšťa sa animácia "bloom" */
+            opacity: 0; 
+            animation: bloom 1.5s ease-in-out forwards;
+            
+            /* Zabezpečí, že animácia nezačne úplne okamžite, ale dá videu pol sekundy náskok */
+            animation-delay: 0.5s; 
+        }
+
+        /* Samotná animácia objavovania a "kvitnutia" textu */
+        @keyframes bloom {
+            0% {
+                opacity: 0;
+                transform: scale(0.95); /* Na začiatku je text o vlások menší */
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1); /* Plynule dorastie do normálnej veľkosti */
+            }
         }
 
         .loomia {
-            font-size: 6rem; /* Výrazne väčší font, aby ho bolo vidieť spoza videa */
+            font-size: 6rem; 
             font-weight: 600;
             letter-spacing: 0.15em;
             margin: 0;
@@ -44,13 +65,10 @@
         /* VIDEO VPREDU (Vrstva 2) */
         video {
             position: relative; 
-            z-index: 2; /* Umiestni video nad text */
+            z-index: 2; 
             max-width: 150vw;
             max-height: 150vh;
             border-radius: 15px;
-            
-            /* Ak má tvoje video biele/svetlé pozadie, toto ho spriehľadní
-               a text zozadu bude presvitať. */
             mix-blend-mode: multiply; 
         }
     </style>
