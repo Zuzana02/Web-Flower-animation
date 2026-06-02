@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Animation</title>
+    <style>
+        body {
+            /* Reset margins and padding */
+            margin: 0;
+            padding: 0;
+            
+            /* Your light brown BONE color */
+            background-color: #E5D7C4; 
+            
+            /* These 3 lines ensure perfect center alignment */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Stretches the background to the full height of the browser window */
+            height: 100vh; 
+            
+            /* Hides scrollbars to keep the page completely clean */
+            overflow: hidden; 
+        }
+
+        video {
+            /* Video adapts to the screen so it isn't too huge */
+            max-width: 90vw;
+            max-height: 90vh;
+            
+            /* If you want completely sharp video corners, delete this line. 
+               If you want gently rounded ones, leave it as is. */
+            border-radius: 15px; 
+            
+            /* If the animation doesn't have its own background and you want it 
+               to blend with the light brown, this ensures it */
+            mix-blend-mode: multiply; 
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted playsinline>
+        <source src="animacia.mp4" type="video/mp4">
+    </video>
+
+</body>
+</html>
